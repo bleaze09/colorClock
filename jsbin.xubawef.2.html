@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by bleaze09 (http://jsbin.com/xubawef/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ora</title>
+  <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+<style id="jsbin-css">
+* { margin: 0; padding: 0; }
+html, body {
+  height: 100%
+}
+
+#clock {
+  text-align: center;
+  position: relative;
+  top: 40%;
+  font-family: 'Kanit', sans-serif;
+  font-size: 150px;
+  margin-top: -100px;
+}
+
+</style>
+</head>
+<body>
+  <div id="clock">18:20:25</div>
+<script id="jsbin-javascript">
+function colorClock(){
+var date = new Date();
+console.log(date);
+var hours = date.getHours();
+console.log(hours);
+if (hours < 10) {
+  hours = '0' + hours;
+}
+var minutes = date.getMinutes();
+if (minutes < 10) {
+  minutes = '0' + minutes;
+}
+var seconds = date.getSeconds();
+if (seconds < 10) {
+  seconds = '0' + seconds;
+}
+console.log(hours+':'+minutes+':'+seconds);
+var clockFace = hours + ':' + minutes + ':' + seconds;
+document.getElementById('clock').innerHTML = clockFace;
+    setTimeout(function() {
+    colorClock();
+  }, 1000);
+var hexColor = '#' + hours + 'ff' + seconds;
+document.body.style.background = hexColor;
+}
+colorClock();
+console.log(colorClock());
+
+</script>
+</body>
+</html>
